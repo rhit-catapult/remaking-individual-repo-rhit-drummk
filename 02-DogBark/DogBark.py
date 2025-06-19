@@ -29,12 +29,15 @@ def main():
     caption1 = font1.render("Two Dogs", True, white)
     # Prepare the music
     # TODO 8: Create a Sound object from the "bark.wav" file.
+    bark = pygame.mixer.Sound("bark.wav")
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
             # TODO 9: Play the music (bark) if there's a mouse click.
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                bark.play()
 
         # Clear the screen and set the screen background
         screen.fill(white)
